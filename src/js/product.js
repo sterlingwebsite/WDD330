@@ -4,12 +4,7 @@ import ProductData from "./ProductData.mjs";
 const dataSource = new ProductData("tents");
 
 function addProductToCart(product) {
-  let cartItems = getLocalStorage("so-cart") || [];
-
-  if (!Array.isArray(cartItems)) {
-    cartItems = [cartItems];
-  }
-
+  const cartItems = getLocalStorage("so-cart") || [];
   cartItems.push(product);
   setLocalStorage("so-cart", cartItems);
 }
