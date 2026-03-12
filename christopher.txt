@@ -1,0 +1,4 @@
+Christopher Bahinting
+
+fix: change 'products' to 'product' in template link to fix data loading.
+  ( <a href="product_pages/?product=${product.Id}"> ) of the productList.mjs file.
