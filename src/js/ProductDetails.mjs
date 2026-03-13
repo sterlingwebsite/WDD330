@@ -36,8 +36,9 @@ function productDetailsTemplate(product) {
     productImage.alt = product.NameWithoutBrand;
 
     // Grab the price  from the product data
-    const retailPrice = product.SuggestedRetailPrice;
-    const finalPrice = product.FinalPrice;
+    const discountRate = 0.20;
+    const retailPrice = product.SuggestedRetailPrice.toFixed(2);
+    const finalPrice = (retailPrice * (1 - discountRate)).toFixed(2);
     const priceElement = document.getElementById('productPrice');
 
     // Check if there is a discount

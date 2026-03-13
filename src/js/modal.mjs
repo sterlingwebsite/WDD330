@@ -4,7 +4,16 @@ const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 window.addEventListener("load", () => {
     const modal = document.getElementById("ad-modal");
-    const closeBtn = document.querySelector(".close-button");
+    
+
+    modal.innerHTML = `
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>BIG SALE!</h2>
+        <p>Avail our tents today! Save up to 20% Discount.</p>
+    </div>`;
+
+    const closeBtn = modal.querySelector(".close-button");
 
     if (modal && closeBtn) {
          wait(1500).then(() => {
