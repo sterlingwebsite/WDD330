@@ -116,6 +116,40 @@ button {
 
 /* End utility classes */
 
+
+/* MODAL */
+ .promo {
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.7);  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Advertisement box */
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* X Button */
+.close-button {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+
+
+
 /* Cart icon styles */
 .cart {
   padding-top: 1em;
@@ -240,6 +274,33 @@ button {
   grid-row: 2;
   grid-column: 3;
 }
+
+/* class that hold the three spans of prices */
+#productPrice {
+  display: flex;
+  flex-direction: column; /*  stacks */
+  gap: 5px;               /* GAP */
+  margin-top: 10px;
+}
+
+.original-price {
+  color: #666;
+  font-size: 1.2em;
+  text-decoration: line-through; /* Adds the strikethrough automatically */
+}
+
+.discount-badge {
+  color: #d10000; /* style for attention */
+  font-weight: bold;   /* style bolf */
+  font-size: 1em;
+}
+
+.finalPrice {
+  color: #000;
+  font-weight: bold;
+  font-size: 1.2em; /* make the final bigger */
+}
+
 
 @media screen and (min-width: 500px) {
   body {
