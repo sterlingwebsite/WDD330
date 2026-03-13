@@ -241,6 +241,33 @@ button {
   grid-column: 3;
 }
 
+/* class that hold the three spans of prices */
+#productPrice {
+  display: flex;
+  flex-direction: column; /*  stacks */
+  gap: 5px;               /* GAP */
+  margin-top: 10px;
+}
+
+.original-price {
+  color: #666;
+  font-size: 1.2em;
+  text-decoration: line-through; /* Adds the strikethrough automatically */
+}
+
+.discount-badge {
+  color: #d10000; /* style for attention */
+  font-weight: bold;   /* style bolf */
+  font-size: 1em;
+}
+
+.finalPrice {
+  color: #000;
+  font-weight: bold;
+  font-size: 1.2em; /* make the final bigger */
+}
+
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;

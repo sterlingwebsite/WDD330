@@ -35,7 +35,27 @@ function productDetailsTemplate(product) {
     productImage.src = product.Image;
     productImage.alt = product.NameWithoutBrand;
 
-    document.getElementById('productPrice').textContent = product.FinalPrice;
+    // Grab the price  from the product data
+    const retailPrice = product.SuggestedRetailPrice;
+    const finalPrice = product.FinalPrice;
+    const priceElement = document.getElementById('productPrice');
+
+    // Check if there is a discount
+    if (retailPrice > finalPrice) {
+        const savings = (retailPrice - finalPrice).toFixed(2);
+        
+        // Use innerHTML to inject the discount badge + old price + new price with backticks
+        priceElement.innerHTML = `
+            <span class="original-price">RETAIL PRICE: $${retailPrice}</span> 
+            <span class="discount-badge">Discount $${savings}!</span>
+            <span class="finalPrice"> FINAL PRICE: $${finalPrice}</span>
+        `;
+    } else {
+        // the else If no discount, just show the price as usual
+        priceElement.textContent = `$${finalPrice}`;
+    }
+
+
     document.getElementById('productColor').textContent = product.Colors[0].ColorName;
     document.getElementById('productDesc').innerHTML = product.DescriptionHtmlSimple;
 

@@ -13,3 +13,6 @@ fix: change 'products' to 'product' in template link to fix data loading.
 
         Lightweight and ready for adventure, this Cedar Ridge Rimrock tent boasts a 
         weather-ready design that includes a tub-style floor and factory-sealed rain fly
+
+
+for my individual task, I added discount for the products
