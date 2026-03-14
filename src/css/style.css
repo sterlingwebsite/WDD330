@@ -301,6 +301,15 @@ button {
   font-size: 1.2em; /* make the final bigger */
 }
 
+/* This prevents the modal from appearing twice. Beforehand, JS was rendering it twice. */
+#ad-modal {
+  display: none;
+}
+
+#ad-modal.show {
+  display: flex;
+}
+
 
 @media screen and (min-width: 500px) {
   body {

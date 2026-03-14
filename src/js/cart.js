@@ -1,4 +1,7 @@
-import { getLocalStorage } from "./utils.mjs";
+import { getLocalStorage, loadHeaderFooter } from "./utils.mjs";
+
+// dynamic header and footer from W03 Team Activity
+loadHeaderFooter();
 
 // function renderCartContents() {
 //   const cartItems = getLocalStorage("so-cart");
