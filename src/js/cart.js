@@ -16,17 +16,16 @@ function renderCartContents() {
     cartItems = [cartItems];
   }
 
-  const htmlItems = cartItems.map(item => cartItemTemplate(item));
+  const htmlItems = cartItems.map((item) => cartItemTemplate(item));
   document.querySelector(".product-list").innerHTML = htmlItems.join("");
 }
 
 function cartItemTemplate(item) {
-
   //to calculate the discount
-  const discountRate = 0.20;
+  const discountRate = 0.2;
   const discount = (item.SuggestedRetailPrice * discountRate).toFixed(2);
-  const finalPrice = (item.SuggestedRetailPrice - discount).toFixed(2)
-  
+  const finalPrice = (item.SuggestedRetailPrice - discount).toFixed(2);
+
   //template building
   const newItem = `<li class="cart-card divider">
   <a href="#" class="cart-card__image">
@@ -41,10 +40,14 @@ function cartItemTemplate(item) {
   <p class="cart-card__color">${item.Colors[0].ColorName}</p>
   <p class="cart-card__quantity">qty: 1</p>
 
-  ${discount> 0 ? ` 
+  ${
+    discount > 0
+      ? ` 
   <p class="cart-card__discount"> Save $${discount}! </p>
   <p class="cart-card__retail-price"> Suggested Price $${item.SuggestedRetailPrice} </p>
-  ` : "" }
+  `
+      : ""
+  }
   <p class="cart-card__price">Final Price $${finalPrice}</p>
 </li>`;
 
