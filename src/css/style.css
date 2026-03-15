@@ -116,14 +116,15 @@ button {
 
 /* End utility classes */
 
-
 /* MODAL */
- .promo {
+.promo {
   position: fixed;
   z-index: 999;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.7);  
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -142,13 +143,11 @@ button {
 /* X Button */
 .close-button {
   position: absolute;
-  top: 10px; right: 15px;
+  top: 10px;
+  right: 15px;
   font-size: 28px;
   cursor: pointer;
 }
-
-
-
 
 /* Cart icon styles */
 .cart {
@@ -279,7 +278,7 @@ button {
 #productPrice {
   display: flex;
   flex-direction: column; /*  stacks */
-  gap: 5px;               /* GAP */
+  gap: 5px; /* GAP */
   margin-top: 10px;
 }
 
@@ -291,7 +290,7 @@ button {
 
 .discount-badge {
   color: #d10000; /* style for attention */
-  font-weight: bold;   /* style bolf */
+  font-weight: bold; /* style bolf */
   font-size: 1em;
 }
 
@@ -310,6 +309,31 @@ button {
   display: flex;
 }
 
+/* W03 Individual Activity */
+img {
+  width: 100%;
+  height: auto;
+}
+
+.product-list img {
+  width: 80px;
+  display: block;
+  margin: 0 auto;
+}
+
+.product-list {
+  gap: 6rem;
+  flex-wrap: wrap;
+}
+
+.product-list li {
+  text-align: center;
+}
+
+.product-list h2 {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+}
 
 @media screen and (min-width: 500px) {
   body {
