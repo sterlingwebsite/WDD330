@@ -18,6 +18,25 @@ function renderCartContents() {
 
   const htmlItems = cartItems.map((item) => cartItemTemplate(item));
   document.querySelector(".product-list").innerHTML = htmlItems.join("");
+
+  /* W04 Individual Task(s): Report - Total$ in Cart */
+  const footer = document.querySelector(".cart-footer");
+
+  if (cartItems.length > 0) {
+    footer.classList.remove("hide");
+
+    const total = cartItems.reduce((sum, item) => {
+      const price = Number(item.SuggestedRetailPrice);
+      const discount = price * 0.2;
+      const finalPrice = price - discount;
+      return sum + finalPrice;
+    }, 0);
+
+    document.querySelector(".cart-total").textContent =
+      `Total: $${total.toFixed(2)}`;
+  } else {
+    footer.classList.add("hide");
+  }
 }
 
 function cartItemTemplate(item) {

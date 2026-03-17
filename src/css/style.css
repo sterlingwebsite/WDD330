@@ -344,6 +344,17 @@ img {
   color: #777;
 }
 
+/* W04 Individual Task(s): Report - Sterling - Total$ in Cart */
+.cart-footer {
+  padding: 1rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.hide {
+  display: none;
+}
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;
