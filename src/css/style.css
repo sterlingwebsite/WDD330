@@ -189,6 +189,10 @@ button {
   padding: 1rem;
 }
 
+.products h2 {
+  margin-bottom: 1rem;
+}
+
 .product-list {
   display: flex;
   flex-flow: row wrap;
@@ -345,10 +349,30 @@ img {
 }
 
 /* W04 Individual Task(s): Report - Sterling - Total$ in Cart */
-.cart-footer {
+.list-footer {
   padding: 1rem;
   font-size: 1.4rem;
   font-weight: bold;
+}
+
+/* W04 Team Activity: Checkout */
+.list-total, #checkout-btn {
+  margin: 0 auto;
+  width: fit-content;
+}
+
+#checkout-btn {
+  display: block;
+  text-decoration: none;
+  color: #303030;
+  background-color: #f0a868;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: 1px solid black;
+
+  &:hover {
+    background-color: #fc8f31;
+  }
 }
 
 .hide {

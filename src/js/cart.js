@@ -20,7 +20,7 @@ function renderCartContents() {
   document.querySelector(".product-list").innerHTML = htmlItems.join("");
 
   /* W04 Individual Task(s): Report - Total$ in Cart */
-  const footer = document.querySelector(".cart-footer");
+  const footer = document.querySelector(".list-footer");
 
   if (cartItems.length > 0) {
     footer.classList.remove("hide");
@@ -32,7 +32,7 @@ function renderCartContents() {
       return sum + finalPrice;
     }, 0);
 
-    document.querySelector(".cart-total").textContent =
+    document.querySelector(".list-total").textContent =
       `Total: $${total.toFixed(2)}`;
   } else {
     footer.classList.add("hide");
