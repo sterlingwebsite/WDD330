@@ -283,12 +283,12 @@ button {
   display: flex;
   flex-direction: column; /*  stacks */
   gap: 5px; /* GAP */
-  margin-top: 10px;
+  /* margin-top: 10px; */
 }
 
 .original-price {
   color: #666;
-  font-size: 1.2em;
+  /* font-size: 1.2em; */
   text-decoration: line-through; /* Adds the strikethrough automatically */
 }
 
@@ -298,7 +298,7 @@ button {
   font-size: 1em;
 }
 
-.finalPrice {
+.finalPrice , #p-price{
   color: #000;
   font-weight: bold;
   font-size: 1.2em; /* make the final bigger */

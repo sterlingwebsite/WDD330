@@ -47,7 +47,7 @@ export function renderWithTemplate(template, parentElement, data, callback) {
   }
 }
 
-export async function loadTemplate(path) {
+async function loadTemplate(path) {
   const res = await fetch(path);
   const template = await res.text();
   return template;

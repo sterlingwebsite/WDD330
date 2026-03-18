@@ -3,6 +3,7 @@ import { getLocalStorage, loadHeaderFooter } from "./utils.mjs";
 // dynamic header and footer from W03 Team Activity
 loadHeaderFooter();
 
+// Professor's code. Doesn't work when cart is empty, because "so-cart" isn't an array.
 // function renderCartContents() {
 //   const cartItems = getLocalStorage("so-cart");
 //   const htmlItems = cartItems.map((item) => cartItemTemplate(item));
