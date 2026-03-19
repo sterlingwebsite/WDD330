@@ -1,4 +1,5 @@
 import { getLocalStorage, setLocalStorage } from "./utils.mjs";
+import { updateCartInventory } from "./cartCounter.mjs";
 
 export default class ProductDetails {
     
@@ -20,6 +21,9 @@ export default class ProductDetails {
         const cartItems = getLocalStorage("so-cart") || [];
         cartItems.push(this.product);
         setLocalStorage("so-cart", cartItems);
+
+        //for superscript number in orderCounter
+        updateCartInventory();
     }
 
     renderProductDetails() {

@@ -1,7 +1,16 @@
 import { getLocalStorage, loadHeaderFooter } from "./utils.mjs";
+import { updateCartInventory } from "./cartCounter.mjs";
 
 // dynamic header and footer from W03 Team Activity
-loadHeaderFooter();
+// loadHeaderFooter();
+async function init() {
+  // 1. Wait for the header to actually land in the DOM
+  await loadHeaderFooter();
+
+  updateCartInventory();
+
+  renderCartContents();
+}
 
 // function renderCartContents() {
 //   const cartItems = getLocalStorage("so-cart");
@@ -73,4 +82,4 @@ function cartItemTemplate(item) {
   return newItem;
 }
 
-renderCartContents();
+init();
