@@ -379,6 +379,40 @@ img {
   display: none;
 }
 
+#checkoutSubmit {
+  margin: 1rem auto;
+  border-radius: 10px;
+  border: 1px solid black;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #3f460b;
+  }
+}
+
+/* W04 Individual Activity: Error Checking and Validation */
+.alert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  background-color: rgb(255, 133, 133);
+  border: 1px solid black;
+  color: black;
+  width: fit-content;
+  margin: 1rem auto;
+
+  & span {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  & p {
+    margin: 0;
+  }
+}
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;

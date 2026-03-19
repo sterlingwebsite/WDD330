@@ -3,15 +3,15 @@ import CheckoutProcess from "./CheckoutProcess.mjs";
 
 loadHeaderFooter();
 
-const order = new CheckoutProcess("so-cart", ".checkout-summary");
-order.init();
+const myCheckout = new CheckoutProcess("so-cart", ".checkout-summary");
+myCheckout.init();
 
 document
-    .querySelector("#zip")
-    .addEventListener("blur", order.calculateOrderTotal.bind(order));
+  .querySelector("#zip")
+  .addEventListener("blur", myCheckout.calculateOrderTotal.bind(myCheckout));
 
 document.querySelector("#checkoutSubmit").addEventListener("click", (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    order.checkout();
+  myCheckout.checkout();
 });
