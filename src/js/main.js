@@ -11,8 +11,8 @@ function renderCategories(list) {
     (category) => `
     <li>
       <a href="product_listing/index.html?category=${category}">
-        <img src="images/category-${category.replace("-", "")}.svg" alt="${category}">
-        <h2>${category.charAt(0).toUpperCase() + category.slice(1).replace("-", " ")}</h2>
+        <img src="images/category-${category}.svg" alt="${category}">
+        <h2>${category.charAt(0).toUpperCase() + category.slice(1).replaceAll("-", " ")}</h2>
       </a>
     </li>
   `,
