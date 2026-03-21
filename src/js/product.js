@@ -4,7 +4,6 @@ import ProductData from "./ProductData.mjs";
 const dataSource = new ProductData("tents");
 
 function addProductToCart(product) {
-  setLocalStorage("so-cart", product);
   let cartItems = getLocalStorage("so-cart");
 
   // initialize cartItems as an array if it is null
@@ -15,7 +14,6 @@ function addProductToCart(product) {
   cartItems.push(product);
   setLocalStorage("so-cart", cartItems);
 }
-
 
 // handler for add to cart button
 async function addToCartHandler(e) {

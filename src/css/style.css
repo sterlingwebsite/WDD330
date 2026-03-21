@@ -141,38 +141,33 @@ button {
 }
 
 /* counter superscript in backpack logo */
- .cart {
-  position: relative; 
+.cart {
+  position: relative;
   display: inline-block;
 }
- 
+
 .cart-count {
   position: absolute;
-  top: 2px;           
-  right: -4px;       
-  background-color: hwb(44 0% 0%);  
+  top: 2px;
+  right: -4px;
+  background-color: hwb(44 0% 0%);
   color: black;
-  border-radius: 50%;  
-  font-size: 1rem;  
+  border-radius: 50%;
+  font-size: 1rem;
   font-weight: bold;
-  line-height: 1;  
+  line-height: 1;
   height: 20px;
   width: 20px;
-  display: flex;      
+  display: flex;
   align-items: center;
   justify-content: center;
   padding: 11px;
-  
 }
 
 /*The 'Hidden' Utility */
 .hidden {
-  display: none; 
+  display: none;
 }
-
-
-
-
 
 /* X Button */
 .close-button {
