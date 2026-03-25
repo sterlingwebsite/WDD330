@@ -1,4 +1,5 @@
 import { alertMessage, getLocalStorage, setLocalStorage } from "./utils.mjs";
+import { updateCartInventory } from "./cartCounter.mjs";
 
 export default class ProductDetails {
     
@@ -24,6 +25,9 @@ export default class ProductDetails {
         cartContents.push(this.product);
         setLocalStorage("so-cart", cartContents);
         alertMessage(`${this.product.NameWithoutBrand} added to cart!`);
+        
+        //for superscript number in orderCounter
+        updateCartInventory();
     }
 
     renderProductDetails(selector) {

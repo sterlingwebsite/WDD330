@@ -1,7 +1,16 @@
 import { getLocalStorage, loadHeaderFooter } from "./utils.mjs";
+import { updateCartInventory } from "./cartCounter.mjs";
 
 // dynamic header and footer from W03 Team Activity
-loadHeaderFooter();
+// loadHeaderFooter();
+async function init() {
+  // 1. Wait for the header to actually land in the DOM
+  await loadHeaderFooter();
+
+  updateCartInventory();
+
+  renderCartContents();
+}
 
 // Professor's code. Doesn't work when cart is empty, because "so-cart" isn't an array.
 // function renderCartContents() {
@@ -41,6 +50,14 @@ function renderCartContents() {
 }
 
 function cartItemTemplate(item) {
+  let imageSrc = item.Image || (item.Images && item.Images.PrimaryMedium) || "";
+
+  if (imageSrc.startsWith("http")) {
+  } else if (imageSrc.startsWith("../")) {
+    imageSrc = imageSrc.replace("../", "/");
+  } else if (imageSrc && !imageSrc.startsWith("/")) {
+    imageSrc = "/" + imageSrc;
+  }
   //to calculate the discount
   const discountRate = 0.2;
   const discount = (item.SuggestedRetailPrice * discountRate).toFixed(2);
@@ -50,7 +67,7 @@ function cartItemTemplate(item) {
   const newItem = `<li class="cart-card divider">
   <a href="#" class="cart-card__image">
     <img
-      src="${item.Image}"
+      src="${imageSrc}" 
       alt="${item.Name}"
     />
   </a>
@@ -74,4 +91,4 @@ function cartItemTemplate(item) {
   return newItem;
 }
 
-renderCartContents();
+init();
