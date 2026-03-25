@@ -49,6 +49,14 @@ function renderCartContents() {
 }
 
 function cartItemTemplate(item) {
+  let imageSrc = item.Image || (item.Images && item.Images.PrimaryMedium) || "";
+
+  if (imageSrc.startsWith("http")) {
+  } else if (imageSrc.startsWith("../")) {
+    imageSrc = imageSrc.replace("../", "/");
+  } else if (imageSrc && !imageSrc.startsWith("/")) {
+    imageSrc = "/" + imageSrc;
+  }
   //to calculate the discount
   const discountRate = 0.2;
   const discount = (item.SuggestedRetailPrice * discountRate).toFixed(2);
@@ -58,7 +66,7 @@ function cartItemTemplate(item) {
   const newItem = `<li class="cart-card divider">
   <a href="#" class="cart-card__image">
     <img
-      src="${item.Image}"
+      src="${imageSrc}" 
       alt="${item.Name}"
     />
   </a>
