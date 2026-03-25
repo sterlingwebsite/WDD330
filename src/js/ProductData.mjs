@@ -10,16 +10,18 @@ function convertToJson(res) {
 
 export default class ProductData {
   constructor(category) {
-    // this.category = category;
+    this.category = category;
+    this.baseURL = import.meta.env.VITE_SERVER_URL;
     // this.path = `/json/${this.category}.json`;
   }
   async getData(category) {
-    const response = await fetch(`${baseURL}products/search/${category}`);
+    // const response = await fetch(`${baseURL}products/search/${category}`); 
+    const response = await fetch(`${this.baseURL}products/search/${category}`);
     const data = await convertToJson(response);
     return data.Result;
   }
   async findProductById(id) {
-    const response = await fetch(`${baseURL}product/${id}`);
+    const response = await fetch(`${this.baseURL}product/${id}`);
     const data = await convertToJson(response);
     return data.Result;
   }
