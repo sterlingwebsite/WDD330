@@ -223,6 +223,10 @@ button {
   padding: 1rem;
 }
 
+.products h2 {
+  margin-bottom: 1rem;
+}
+
 .product-list {
   display: flex;
   flex-flow: row wrap;
@@ -313,12 +317,12 @@ button {
   display: flex;
   flex-direction: column; /*  stacks */
   gap: 5px; /* GAP */
-  margin-top: 10px;
+  /* margin-top: 10px; */
 }
 
 .original-price {
   color: #666;
-  font-size: 1.2em;
+  /* font-size: 1.2em; */
   text-decoration: line-through; /* Adds the strikethrough automatically */
 }
 
@@ -328,7 +332,7 @@ button {
   font-size: 1em;
 }
 
-.finalPrice {
+.finalPrice , #p-price{
   color: #000;
   font-weight: bold;
   font-size: 1.2em; /* make the final bigger */
@@ -367,6 +371,46 @@ img {
 .product-list h2 {
   margin-top: 0.5rem;
   font-size: 1.1rem;
+}
+
+/* W03 Individual Task - Sterling - Discount indicator-product listing */
+.discount-badge {
+  border-radius: 4px;
+}
+
+.product-card__retail-price {
+  color: #777;
+}
+
+/* W04 Individual Task(s): Report - Sterling - Total$ in Cart */
+.list-footer {
+  padding: 1rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+/* W04 Team Activity: Checkout */
+.list-total, #checkout-btn {
+  margin: 0 auto;
+  width: fit-content;
+}
+
+#checkout-btn {
+  display: block;
+  text-decoration: none;
+  color: #303030;
+  background-color: #f0a868;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: 1px solid black;
+
+  &:hover {
+    background-color: #fc8f31;
+  }
+}
+
+.hide {
+  display: none;
 }
 
 @media screen and (min-width: 500px) {

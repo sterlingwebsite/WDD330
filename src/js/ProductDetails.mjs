@@ -13,7 +13,7 @@ export default class ProductDetails {
         this.product = await this.dataSource.findProductById(this.productId);
         this.renderProductDetails();
         document
-            .getElementById('addToCart')
+            .getElementById('add-to-cart')
             .addEventListener('click', this.addProductToCart.bind(this));
     }
 
@@ -32,28 +32,36 @@ export default class ProductDetails {
 }
 
 function productDetailsTemplate(product) {
-    document.querySelector('h2').textContent = product.Brand.Name;
-    document.querySelector('h3').textContent = product.NameWithoutBrand;
+    document.querySelector("h2").textContent =
+      product.Category.charAt(0).toUpperCase() + product.Category.slice(1);
+    document.querySelector('#p-brand').textContent = product.Brand.Name;
+    document.querySelector("#p-name").textContent = product.NameWithoutBrand;
 
-    const productImage = document.getElementById('productImage');
+    const productImage = document.getElementById('p-image');
     productImage.src = product.Images.PrimaryExtraLarge;
     productImage.alt = product.NameWithoutBrand;
 
+    
+
+    document.querySelector("#p-price").textContent = `New Price: $${product.FinalPrice}`;
+    document.querySelector("#p-color").textContent = product.Colors[0].ColorName;
+    document.querySelector("#p-description").innerHTML = product.DescriptionHtmlSimple;
+    document.querySelector("#add-to-cart").dataset.id = product.Id;
+
     // Grab the price  from the product data
-    const discountRate = 0.20;
-    const retailPrice = product.SuggestedRetailPrice.toFixed(2);
-    const finalPrice = (retailPrice * (1 - discountRate)).toFixed(2);
+    const retailPrice = product.SuggestedRetailPrice;
+    // const finalPrice = (retailPrice * (1 - discountRate)).toFixed(2);
+    const finalPrice = product.FinalPrice;
     const priceElement = document.getElementById('productPrice');
 
     // Check if there is a discount
     if (retailPrice > finalPrice) {
-        const savings = (retailPrice - finalPrice).toFixed(2);
+        const savings = Math.round(retailPrice - finalPrice);
         
         // Use innerHTML to inject the discount badge + old price + new price with backticks
         priceElement.innerHTML = `
-            <span class="original-price">RETAIL PRICE: $${retailPrice}</span> 
+            <span class="original-price">Retail Price: $${retailPrice}</span> 
             <span class="discount-badge">Discount $${savings}!</span>
-            <span class="finalPrice"> FINAL PRICE: $${finalPrice}</span>
         `;
     } else {
         // the else If no discount, just show the price as usual
@@ -61,8 +69,8 @@ function productDetailsTemplate(product) {
     }
 
 
-    document.getElementById('productColor').textContent = product.Colors[0].ColorName;
-    document.getElementById('productDesc').innerHTML = product.DescriptionHtmlSimple;
+    // document.getElementById('productColor').textContent = product.Colors[0].ColorName;
+    // document.getElementById('productDesc').innerHTML = product.DescriptionHtmlSimple;
 
-    document.getElementById('addToCart').dataset.id = product.Id;
+    // document.getElementById('addToCart').dataset.id = product.Id;
 }
