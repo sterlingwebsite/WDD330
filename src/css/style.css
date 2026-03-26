@@ -332,7 +332,7 @@ button {
   font-size: 1em;
 }
 
-.finalPrice , #p-price{
+.finalPrice, .final-price, #p-price{
   color: #000;
   font-weight: bold;
   font-size: 1.2em; /* make the final bigger */
@@ -411,6 +411,73 @@ img {
 
 .hide {
   display: none;
+}
+
+#checkoutSubmit {
+  margin: 1rem auto;
+  border-radius: 10px;
+  border: 1px solid black;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #3f460b;
+  }
+}
+
+/* W04 Individual Activity: Error Checking and Validation */
+.alert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  background-color: rgb(255, 133, 133);
+  border: 1px solid black;
+  color: black;
+  width: fit-content;
+  margin: 1rem auto;
+
+  & span {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  & p {
+    margin: 0;
+  }
+}
+
+#checkoutSuccessContinueShoppingBtn {
+  display: inline-block;
+  background-color: #f0a868;
+  color: #303030;
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+  border: 1px solid #000;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  margin: 1.5rem auto 0;
+  width: fit-content;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+
+  &:hover {
+    background-color: #fc8f31;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+    background-color: #e07a20;
+  }
+}
+
+#checkoutSuccessMain {
+  text-align: center;
+  padding: 2rem;
 }
 
 @media screen and (min-width: 500px) {
