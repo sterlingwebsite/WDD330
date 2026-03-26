@@ -332,7 +332,7 @@ button {
   font-size: 1em;
 }
 
-.finalPrice , #p-price{
+.finalPrice, .final-price, #p-price{
   color: #000;
   font-weight: bold;
   font-size: 1.2em; /* make the final bigger */
