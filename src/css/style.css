@@ -480,6 +480,28 @@ img {
   padding: 2rem;
 }
 
+/* W04 - Add customizable alert to index.html */
+.alert-item {
+  display: flex;             
+  justify-content: center;  
+  align-items: center;  
+  text-align: center;      
+  padding: 10px 20px;         
+  margin-bottom: 5px;         
+}
+
+.alert-message {
+  margin: 0;                  
+  flex-grow: 1;               
+}
+
+.alert-close {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0 10px;
+  font-family: sans-serif;
+}
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;
