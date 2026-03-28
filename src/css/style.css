@@ -141,38 +141,33 @@ button {
 }
 
 /* counter superscript in backpack logo */
- .cart {
-  position: relative; 
+.cart {
+  position: relative;
   display: inline-block;
 }
- 
+
 .cart-count {
   position: absolute;
-  top: 2px;           
-  right: -4px;       
-  background-color: hwb(44 0% 0%);  
+  top: 2px;
+  right: -4px;
+  background-color: hwb(44 0% 0%);
   color: black;
-  border-radius: 50%;  
-  font-size: 1rem;  
+  border-radius: 50%;
+  font-size: 1rem;
   font-weight: bold;
-  line-height: 1;  
+  line-height: 1;
   height: 20px;
   width: 20px;
-  display: flex;      
+  display: flex;
   align-items: center;
   justify-content: center;
   padding: 11px;
-  
 }
 
 /* 3. The 'Hidden' Utility */
 .hidden {
-  display: none; 
+  display: none;
 }
-
-
-
-
 
 /* X Button */
 .close-button {
@@ -332,7 +327,9 @@ button {
   font-size: 1em;
 }
 
-.finalPrice, .final-price, #p-price{
+.finalPrice,
+.final-price,
+#p-price {
   color: #000;
   font-weight: bold;
   font-size: 1.2em; /* make the final bigger */
@@ -390,7 +387,8 @@ img {
 }
 
 /* W04 Team Activity: Checkout */
-.list-total, #checkout-btn {
+.list-total,
+#checkout-btn {
   margin: 0 auto;
   width: fit-content;
 }
@@ -457,7 +455,9 @@ img {
   font-weight: 600;
   text-align: center;
   text-decoration: none;
-  transition: background-color 0.2s ease, transform 0.15s ease;
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease;
   margin: 1.5rem auto 0;
   width: fit-content;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
@@ -482,17 +482,17 @@ img {
 
 /* W04 - Add customizable alert to index.html */
 .alert-item {
-  display: flex;             
-  justify-content: center;  
-  align-items: center;  
-  text-align: center;      
-  padding: 10px 20px;         
-  margin-bottom: 5px;         
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px 20px;
+  margin-bottom: 5px;
 }
 
 .alert-message {
-  margin: 0;                  
-  flex-grow: 1;               
+  margin: 0;
+  flex-grow: 1;
 }
 
 .alert-close {

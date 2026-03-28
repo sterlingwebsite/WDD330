@@ -53,6 +53,7 @@ function cartItemTemplate(item) {
   let imageSrc = item.Image || (item.Images && item.Images.PrimaryMedium) || "";
 
   if (imageSrc.startsWith("http")) {
+    // leave alone
   } else if (imageSrc.startsWith("../")) {
     imageSrc = imageSrc.replace("../", "/");
   } else if (imageSrc && !imageSrc.startsWith("/")) {
