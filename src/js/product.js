@@ -2,10 +2,19 @@ import { getParam, loadHeaderFooter } from "./utils.mjs";
 import ExternalServices from "./ExternalServices.mjs";
 import ProductDetails from "./ProductDetails.mjs";
 
-loadHeaderFooter();
+async function init() {
+  // Wait for header and footer to load before doing anything else
+  await loadHeaderFooter();
 
-const dataSource = new ExternalServices("tents");
-const productId = getParam("product");
+  // No category needed - findProductById uses the product id directly
+  const dataSource = new ExternalServices();
 
-const product = new ProductDetails(productId, dataSource);
-product.init();
+  // Get the product id from the URL e.g. ?product=880RR
+  const productId = getParam("product");
+
+  // Create and initialize the product detail view
+  const product = new ProductDetails(productId, dataSource);
+  await product.init();
+}
+
+init();
