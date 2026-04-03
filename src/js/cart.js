@@ -29,17 +29,14 @@ function renderCartContents() {
   const htmlItems = cartItems.map((item) => cartItemTemplate(item));
   document.querySelector(".product-list").innerHTML = htmlItems.join("");
 
-  /* W04 Individual Task(s): Report - Total$ in Cart */
   const footer = document.querySelector(".list-footer");
 
   if (cartItems.length > 0) {
     footer.classList.remove("hide");
 
     const total = cartItems.reduce((sum, item) => {
-      const price = Number(item.SuggestedRetailPrice);
-      const discount = price * 0.2;
-      const finalPrice = price - discount;
-      return sum + finalPrice;
+      // ✅ Use FinalPrice directly from the product object
+      return sum + Number(item.FinalPrice);
     }, 0);
 
     document.querySelector(".list-total").textContent =
@@ -59,12 +56,12 @@ function cartItemTemplate(item) {
   } else if (imageSrc && !imageSrc.startsWith("/")) {
     imageSrc = "/" + imageSrc;
   }
-  //to calculate the discount
-  const discountRate = 0.2;
-  const discount = (item.SuggestedRetailPrice * discountRate).toFixed(2);
-  const finalPrice = (item.SuggestedRetailPrice - discount).toFixed(2);
 
-  //template building
+  const retailPrice = Number(item.SuggestedRetailPrice);
+  const finalPrice = Number(item.FinalPrice);
+  // ✅ Convert to number before comparing
+  const discount = (retailPrice - finalPrice).toFixed(2);
+
   const newItem = `<li class="cart-card divider">
   <a href="#" class="cart-card__image">
     <img
@@ -79,10 +76,11 @@ function cartItemTemplate(item) {
   <p class="cart-card__quantity">qty: 1</p>
 
   ${
-    discount > 0
-      ? ` 
+    // Number(discount) ensures proper numeric comparison
+    Number(discount) > 0
+      ? `
   <p class="cart-card__discount"> Save $${discount}! </p>
-  <p class="cart-card__retail-price"> Suggested Price $${item.SuggestedRetailPrice} </p>
+  <p class="cart-card__retail-price"> Suggested Price $${retailPrice} </p>
   `
       : ""
   }
