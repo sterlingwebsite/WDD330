@@ -1,4 +1,5 @@
-const baseURL = import.meta.env.VITE_SERVER_URL;
+// Use .env variable, fall back to hardcoded URL if not set
+const baseURL = import.meta.env.VITE_SERVER_URL || "https://wdd330-backend.onrender.com/";
 
 async function convertToJson(res) {
   const data = await res.json();
@@ -22,10 +23,10 @@ export default class ExternalServices {
     return data.Result;
   }
   async findProductById(id) {
-    const response = await fetch(`${baseURL}product/${id}`);
-    const data = await convertToJson(response);
-    return data.Result;
-  }
+  const response = await fetch(`${baseURL}product/${id}`);
+  const data = await convertToJson(response);
+  return data.Result;
+}
 
   async checkout(payload) {
     const options = {
