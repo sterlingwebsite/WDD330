@@ -1,0 +1,213 @@
+/* ===============================
+   ROOT VARIABLES (THEME)
+================================= */
+:root {
+  --primary: #C9748F;       /* Dusty rose */
+  --secondary: #8AAE92;     /* Sage green */
+  --accent: #D4A853;        /* Champagne gold */
+  --bg: #FAF8F5;            /* Warm white */
+  --text: #3D3535;          /* Charcoal */
+  --card: #ffffff;
+  --border: #e8e2dc;
+}
+
+/* ===============================
+   GLOBAL STYLES
+================================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* ===============================
+   NAVBAR
+================================= */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px;
+  background: white;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
+/* ===============================
+   HEADINGS
+================================= */
+h1, h2 {
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: 1px;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 2.5rem;
+}
+
+/* ===============================
+   LAYOUT
+================================= */
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* ===============================
+   CARDS (MAIN UI ELEMENT)
+================================= */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* ===============================
+   INPUTS
+================================= */
+input, select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+/* ===============================
+   BUTTONS
+================================= */
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
+}
+
+/* ===============================
+   LISTS
+================================= */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: var(--card);
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+li:hover {
+  background: #f3eeea;
+}
+
+/* ===============================
+   CHECKLIST COMPLETED
+================================= */
+li.completed {
+  text-decoration: line-through;
+  color: gray;
+  opacity: 0.7;
+}
+
+/* ===============================
+   IMAGES (INSPIRATION BOARD)
+================================= */
+img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* ===============================
+   GRID (FOR IMAGES / CARDS)
+================================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+/* ===============================
+   COUNTDOWN (DASHBOARD)
+================================= */
+#countdown {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 20px;
+  color: var(--primary);
+}
+
+/* ===============================
+   ANIMATIONS (REQUIRED)
+================================= */
+.fade-in {
+  animation: fade 0.6s ease-in;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* BUTTON PULSE */
+button:active {
+  transform: scale(0.95);
+}
+
+/* ===============================
+   MOBILE RESPONSIVE
+================================= */
+@media (max-width: 600px) {
+  nav {
+    flex-wrap: wrap;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
