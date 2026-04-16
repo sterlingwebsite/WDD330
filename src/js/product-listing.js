@@ -10,6 +10,10 @@ async function init() {
   updateCartInventory();
 
   const category = getParam("category");
+  const dataSource = new ProductData("tents");
+  const element = document.querySelector(".product-list");
+  const productList = new ProductList(category, dataSource, element);
+
   const dataSource = new ExternalServices();
   const element = document.querySelector(".product-list");
   const productList = new ProductList(category, dataSource, element);

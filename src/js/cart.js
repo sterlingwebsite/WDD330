@@ -137,7 +137,7 @@ function cartItemTemplate(item, index) {
   let imageSrc = item.Image || (item.Images && item.Images.PrimaryMedium) || "";
 
   if (imageSrc.startsWith("http")) {
-    // leave alone
+    return imageSrc;
   } else if (imageSrc.startsWith("../")) {
     imageSrc = imageSrc.replace("../", "/");
   } else if (imageSrc && !imageSrc.startsWith("/")) {
