@@ -218,6 +218,10 @@ button {
   padding: 1rem;
 }
 
+.products h2 {
+  margin-bottom: 1rem;
+}
+
 .product-list {
   display: flex;
   flex-flow: row wrap;
@@ -308,12 +312,12 @@ button {
   display: flex;
   flex-direction: column; /*  stacks */
   gap: 5px; /* GAP */
-  margin-top: 10px;
+  /* margin-top: 10px; */
 }
 
 .original-price {
   color: #666;
-  font-size: 1.2em;
+  /* font-size: 1.2em; */
   text-decoration: line-through; /* Adds the strikethrough automatically */
 }
 
@@ -323,7 +327,9 @@ button {
   font-size: 1em;
 }
 
-.finalPrice {
+.finalPrice,
+.final-price,
+#p-price {
   color: #000;
   font-weight: bold;
   font-size: 1.2em; /* make the final bigger */
@@ -364,6 +370,138 @@ img {
   font-size: 1.1rem;
 }
 
+/* W03 Individual Task - Sterling - Discount indicator-product listing */
+.discount-badge {
+  border-radius: 4px;
+}
+
+.product-card__retail-price {
+  color: #777;
+}
+
+/* W04 Individual Task(s): Report - Sterling - Total$ in Cart */
+.list-footer {
+  padding: 1rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+/* W04 Team Activity: Checkout */
+.list-total,
+#checkout-btn {
+  margin: 0 auto;
+  width: fit-content;
+}
+
+#checkout-btn {
+  display: block;
+  text-decoration: none;
+  color: #303030;
+  background-color: #f0a868;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: 1px solid black;
+
+  &:hover {
+    background-color: #fc8f31;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+#checkoutSubmit {
+  margin: 1rem auto;
+  border-radius: 10px;
+  border: 1px solid black;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #3f460b;
+  }
+}
+
+/* W04 Individual Activity: Error Checking and Validation */
+.alert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  background-color: rgb(255, 133, 133);
+  border: 1px solid black;
+  color: black;
+  width: fit-content;
+  margin: 1rem auto;
+
+  & span {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  & p {
+    margin: 0;
+  }
+}
+
+#checkoutSuccessContinueShoppingBtn {
+  display: inline-block;
+  background-color: #f0a868;
+  color: #303030;
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+  border: 1px solid #000;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease;
+  margin: 1.5rem auto 0;
+  width: fit-content;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+
+  &:hover {
+    background-color: #fc8f31;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+    background-color: #e07a20;
+  }
+}
+
+#checkoutSuccessMain {
+  text-align: center;
+  padding: 2rem;
+}
+
+/* W04 - Add customizable alert to index.html */
+.alert-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px 20px;
+  margin-bottom: 5px;
+}
+
+.alert-message {
+  margin: 0;
+  flex-grow: 1;
+}
+
+.alert-close {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0 10px;
+  font-family: sans-serif;
+}
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;
@@ -378,6 +516,48 @@ img {
     font-size: inherit;
     grid-template-columns: 150px auto 15%;
   }
+}
+
+/* Cart Quantity Controls */
+.cart-card__quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.qty-btn {
+  background: var(--secondary-color, #333);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qty-btn:hover {
+  opacity: 0.8;
+}
+
+.qty-display {
+  font-size: 1.1rem;
+  font-weight: bold;
+  min-width: 1.5rem;
+  text-align: center;
+}
+
+.qty-btn-remove {
+  background: #c0392b;
+  width: auto;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  border-radius: 4px;
 }
 
 footer {

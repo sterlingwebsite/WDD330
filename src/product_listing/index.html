@@ -8,11 +8,24 @@
     <link rel="icon" href="src\images\favicon.ico" />
     <script src="../js/product-listing.js" type="module"></script>
   </head>
+
   <body>
     <header class="divider" id="main-header"></header>
     <main class="divider">
       <section class="products">
         <h2>Top Products: <span class="title highlight"></span></h2>
+
+        <!-- Sort Controls -->
+        <div class="sort-controls">
+          <label for="sort">Sort by:</label>
+          <select id="sort">
+            <option value="default">Default</option>
+            <option value="name">Name (A–Z)</option>
+            <option value="price-asc">Price (Low to High)</option>
+            <option value="price-desc">Price (High to Low)</option>
+          </select>
+        </div>
+
         <ul class="product-list"></ul>
       </section>
     </main>
